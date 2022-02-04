@@ -1,44 +1,103 @@
 * {
-  font-family: "Spoqa Han Sans Neo", "sans-serif" !important;
+  font-family: "Spoqa Han Sans Neo", "SpoqaHanSansNeo", "sans-serif" !important;
 }
 
 .wrapper {
   width: 100%;
-  height: 100vh;
-  min-height: 16rem;
-  background-color: #e1e1e1;
+  min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
 }
 
-.wrapper__bg {
-  background: url("./bg.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    background: #27272a;
+  }
 }
 
-.logo {
-  position: absolute;
+header {
+  width: 100%;
+  height: 6rem;
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  background: white;
+  box-shadow: 0 0 48px 0 rgba(0, 0, 0, 0.16);
+}
+
+@media (prefers-color-scheme: dark) {
+  header {
+    background: #27272a;
+  }
+}
+
+.logo path {
+  fill: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo path {
+    fill: white;
+  }
+}
+
+.jumbotron {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: stretch;
+  padding: 3rem;
 }
 
 .content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   line-height: 1.5;
-  color: #3f3f46;
+  color: black;
+}
+
+.content > h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.25;
+}
+
+@media (prefers-color-scheme: dark) {
+  .content {
+    color: white;
+  }
+}
+
+.block {
+  flex: 1 1 0%;
+  background-image: url(./block.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translateX(4.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  .block {
+    background-image: url(./block_black.png);
+  }
 }
 
 footer {
-  position: absolute;
-  background-color: white;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  flex: none;
   display: flex;
-  justify-content: space-between;
+  padding: 3rem;
   color: #71717a;
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    color: #d4d4d8;
+  }
 }
 
 .footer-info {
@@ -54,25 +113,44 @@ footer {
 }
 
 @media (max-width: 640px) {
+  header {
+    height: 4rem;
+    padding: 0 1.5rem;
+  }
+
   .logo {
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 106.67px;
-    height: 32px;
+    width: 93.84px;
+    height: 28px;
+  }
+
+  .jumbotron {
+    flex-direction: column;
+    padding: 1.5rem;
   }
 
   .content {
-    padding: 1.5rem;
-    bottom: 6rem;
+    order: 9999;
+    text-align: center;
+  }
+
+  .content > h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  .block {
+    width: 24rem;
+    margin: 1.5rem auto;
   }
 
   footer {
-    padding: 1.5rem;
     flex-direction: column;
+    align-items: center;
   }
 
   footer > div ~ div {
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
   }
 
   .footer-info {
@@ -89,21 +167,42 @@ footer {
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
+  header {
+    height: 5rem;
+    padding: 0 2.25rem;
+  }
+
   .logo {
-    top: 2.25rem;
-    left: 2.25rem;
-    width: 133.33px;
-    height: 40px;
+    width: 106.67px;
+    height: 32px;
+  }
+
+  .jumbotron {
+    flex-direction: column;
+    padding: 2.25rem;
   }
 
   .content {
-    padding: 2.25rem;
-    bottom: 4rem;
+    order: 9999;
+    text-align: center;
+    width: 32rem;
+    margin: 0 auto;
+  }
+
+  .content > h1 {
+    font-size: 2.25rem;
+    line-height: 1.375;
+    margin-bottom: 0.75rem;
+  }
+
+  .block {
+    width: 32rem;
+    margin: 2.25rem auto;
   }
 
   footer {
     align-items: center;
-    padding: 1.5rem 2.25rem;
+    justify-content: space-between;
   }
 
   .footer-info {
@@ -116,20 +215,42 @@ footer {
 }
 
 @media (min-width: 1025px) {
+  header {
+    height: 6rem;
+    padding: 0 3rem;
+  }
+
   .logo {
-    top: 3rem;
-    left: 3rem;
-    width: 160px;
-    height: 48px;
+    width: 134px;
+    height: 40px;
+  }
+
+  .jumbotron {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 3rem;
   }
 
   .content {
-    padding: 3rem;
-    bottom: 4rem;
+    width: 32rem;
+    margin-right: 3rem;
+    text-align: left;
+  }
+
+  .content > h1 {
+    font-size: 2.5rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  .block {
+    min-height: 20rem;
+    background-position: right center;
+    transform: translateX(3rem) translateY(2rem);
   }
 
   footer {
     align-items: center;
-    padding: 1.5rem 3rem;
+    justify-content: space-between;
   }
 }
