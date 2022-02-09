@@ -178,7 +178,7 @@ footer {
   .jumbotron {
     flex-direction: column;
     justify-content: center;
-    padding: 4vw;
+    padding: 2vw;
   }
 
   .content {
@@ -190,15 +190,15 @@ footer {
   }
 
   .content > h1 {
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 1.375;
     margin-bottom: 2vw;
   }
 
   .block {
-    width: 40vw;
-    height: 40vw;
-    transform: translateX(7vw);
+    width: 32vw;
+    height: 32vw;
+    transform: translateX(6vw);
     margin: 0 auto;
   }
 
@@ -209,11 +209,11 @@ footer {
   }
 
   .footer-info {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   .footer-region {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   .footer-region > span ~ span {
